@@ -15,6 +15,8 @@ class StoreMauticSubmissions
       @results = response.body['submissions']
     elsif response.status == 401
       RefreshTokenJob.perform_later user: user
+
+      raise MauticErrors::TokenExpiredError
     end
   end
 
