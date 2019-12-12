@@ -1,6 +1,7 @@
 class Mautic
   AUTHORIZE_URL = 'oauth/v2/authorize'.freeze
   TOKEN_URL = '/oauth/v2/token'.freeze
+  FORM_IDS = [5, 7, 9].freeze
   ENTITY_LIMIT = 3000
 
   def initialize user:
