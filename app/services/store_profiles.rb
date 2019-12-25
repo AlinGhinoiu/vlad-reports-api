@@ -23,18 +23,22 @@ class StoreProfiles
       if result['field_id'] == '2'
         profile.first_or_create!(
           sector: result['value'],
-          email: result['user_email']
+          email: result['user_email'],
+          full_name: result['display_name']
         ).update(
           sector: result['value'],
-          email: result['user_email']
+          email: result['user_email'],
+          full_name: result['display_name']
         )
       elsif result['field_id'] == '17'
         profile.first_or_create!(
           role: result['value'],
-          email: result['user_email']
+          email: result['user_email'],
+          full_name: result['display_name']
         ).update(
           role: result['value'],
-          email: result['user_email']
+          email: result['user_email'],
+          full_name: result['display_name']
         )
       end
     end

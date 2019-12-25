@@ -6,10 +6,10 @@ class Api::Reports::ReportsController < ApplicationController
   end
 
   def query
-    "SELECT p.email, p.sector, COUNT(p.sector) AS count FROM submissions s
+    "SELECT p.email, p.full_name, p.sector, COUNT(p.sector) AS count FROM submissions s
     LEFT JOIN profiles p ON s.results->>'emailmembru' = p.email
     WHERE p.sector IS NOT NULL
-    GROUP BY p.sector, p.email
+    GROUP BY p.sector, p.email, p.full_name
     ORDER BY count DESC"
   end
 end
