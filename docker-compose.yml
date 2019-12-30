@@ -16,7 +16,6 @@ services:
     ports:
       - 3000:3000
     environment:
-      - RAILS_ENV=production
       - POSTGRES_HOST=postgres
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
