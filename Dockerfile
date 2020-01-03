@@ -3,4 +3,4 @@ COPY . /app
 WORKDIR /app
 COPY Gemfile* ./
 RUN bundle install
-CMD ["rails", "s"]
+CMD ["bundle", "exec", "rails", "s"]
